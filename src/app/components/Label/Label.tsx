@@ -1,13 +1,13 @@
 import clsx from 'clsx';
 import css from './Label.module.css';
 
-type ActiveLabelProps = {
+type LabelProps = {
   children: React.ReactNode;
   status: 'active' | 'not-active' | 'pending' | 'suspended';
 };
 
-const ActiveLabel = ({ children, status }: ActiveLabelProps) => {
-  return <div className={clsx(css.active, css[status])}>{children}</div>;
+const Label = ({ children, status }: LabelProps) => {
+  return <span className={clsx(css.label, css[status])}>{children}</span>;
 };
 
-export default ActiveLabel;
+export default Label;
