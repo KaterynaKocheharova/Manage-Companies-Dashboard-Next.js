@@ -3,7 +3,7 @@ import { Field } from 'formik';
 
 type InputFieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
-  id: string;
+  id?: string;
 };
 
 const InputField = ({ label, id, ...rest }: InputFieldProps) => {

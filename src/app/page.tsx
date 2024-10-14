@@ -6,7 +6,7 @@ import CompanyForm from './components/CompanyForm';
 export default function Home() {
   console.log(headers());
   return (
-    <main>
+    <main className="p-10">
       {/* <h1 className="text-xl">{new Date().toTimeString()}</h1>
       <StatusLabel status={Status.Active}>Active</StatusLabel>
       <StatusLabel status={Status.NotActive}>Not active</StatusLabel>

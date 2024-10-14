@@ -7,8 +7,6 @@ type LogoUploaderProps = Omit<
   label: string;
 };
 
-// to calculate follow this formula: pixel / 4
-
 const LogoUploader = ({
   label,
   placeholder,
