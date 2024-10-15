@@ -8,7 +8,7 @@ type InputFieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
 
 const InputField = ({ label, id, ...rest }: InputFieldProps) => {
   return (
-    <div className="flex flex-column">
+    <div className="flex flex-col">
       {label && (
         <label htmlFor={id} className="text-base text-gray-900 mb-2">
           {label}

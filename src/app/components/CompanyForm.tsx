@@ -32,7 +32,7 @@ const CompanyForm = () => {
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       {({ handleSubmit }) => (
-        <Form className="flex flex-col gap-10" onSubmit={handleSubmit}>
+        <Form className="flex flex-col gap-10 justify-between" onSubmit={handleSubmit}>
           <p className="text-xl font-semibold">Add new company</p>
           <div className="flex gap-8 flex-wrap">
             <div className="flex flex-col flex-1 gap-5">
@@ -44,7 +44,7 @@ const CompanyForm = () => {
                 name="country"
               />
             </div>
-            <div className="flex flex-col flex-1 gap-5">
+            <div className="flex flex-col flex-1 gap-5 justify-between">
               <InputField label="Name" placeholder="Name" name="name" />
               <InputField
                 label="Category"

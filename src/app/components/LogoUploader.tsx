@@ -20,14 +20,12 @@ const LogoUploader = ({
         className="w-44 h-44 flex flex-col items-center justify-center bg-white border border border-slate-900 rounded-full cursor-pointer"
         htmlFor={id}
       >
-        <Image
-          className="mb-1"
-          alt="upload icon"
-          src="/sprite.svg#icon-cloud-arrow-dwon"
-          width={48}
-          height={48}
-        />
-        {placeholder && <p className="text-base gray-500">{placeholder}</p>}
+        <svg className="mb-1" width="48" height="48">
+          <use href="/sprite.svg#icon-cloud-arrow-down"></use>
+        </svg>
+        {placeholder && (
+          <p className="text-base text-gray-500">{placeholder}</p>
+        )}
         <input
           id={id}
           className="hidden"
