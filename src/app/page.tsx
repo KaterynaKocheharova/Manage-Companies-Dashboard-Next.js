@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useState } from 'react';
 import StatusLabel from './components/StatusLabel';
 import { Status } from './components/StatusLabel';
@@ -7,9 +7,11 @@ import CompanyForm from './components/CompanyForm';
 import Modal from './components/Modal';
 
 export default function Home() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
+
   return (
     <main className="p-10">
+      <button onClick={() => setShow(true)}>Show</button>
       <Modal show={show} onClose={() => setShow(false)}>
         Modal
       </Modal>
