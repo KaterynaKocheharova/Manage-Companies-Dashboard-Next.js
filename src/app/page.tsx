@@ -5,16 +5,14 @@ import { Status } from './components/StatusLabel';
 import { headers } from 'next/headers';
 import CompanyForm from './components/CompanyForm';
 import Modal from './components/Modal';
+import AddCompanyButton from './components/AddCompanyButton';
 
 export default function Home() {
   const [show, setShow] = useState(false);
 
   return (
     <main className="p-10">
-      <button onClick={() => setShow(true)}>Show</button>
-      <Modal show={show} onClose={() => setShow(false)}>
-        Modal
-      </Modal>
+      <AddCompanyButton />
       {/* <h1 className="text-xl">{new Date().toTimeString()}</h1>
       <StatusLabel status={Status.Active}>Active</StatusLabel>
       <StatusLabel status={Status.NotActive}>Not active</StatusLabel>

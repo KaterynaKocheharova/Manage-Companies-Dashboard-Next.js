@@ -2,7 +2,7 @@
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
-type ModalProps = {
+export type ModalProps = {
   children: React.ReactNode;
   show: boolean;
   onClose: () => void; // Include the onClose prop
