@@ -4,7 +4,7 @@ type ToolbarProps = {
 };
 const Tootlbar = ({ action, children }: ToolbarProps) => {
   return (
-    <div className="flex justify-between flex-wrap items-center px-10 py-8">
+    <div className="flex justify-between items-center flex-wrap items-center px-10 py-8">
       {children}
       {action}
     </div>

@@ -8,8 +8,9 @@ const SearchInput = ({ onSearchClick, ...rest }: SeacrhInputProps) => {
   return (
     <div className="relative w-96">
       <input
+        placeholder="Search..."
         type="text"
-        className="w-full p-3 pr-10 border border-gray-300 rounded bg-gray-50 text-sm"
+        className="w-full p-3 pr-10 border border-gray-300 rounded bg-gray-50 text-sm placeholder:text-sm placeholder:text-slate-500"
         {...rest}
       />
       <button
