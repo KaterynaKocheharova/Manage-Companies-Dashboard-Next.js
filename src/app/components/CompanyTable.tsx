@@ -24,6 +24,7 @@ const CompanyTable = ({ children }: CompanyTableProps) => {
             ))}
           </tr>
         </thead>
+        <tbody>{children}</tbody>
       </table>
     </div>
   );
