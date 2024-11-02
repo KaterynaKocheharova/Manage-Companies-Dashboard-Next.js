@@ -1,11 +1,11 @@
 'use client';
-import Header from '../components/Header';
-import Tootlbar from '../components/Tootlbar';
-import AddCompanyButton from '../components/AddCompanyButton';
-import SearchInput from '../components/SearchInput';
-import CompanyTable from '../components/CompanyTable';
-import CompanyRow from '../components/CompanyRow';
-import { Status } from '../components/StatusLabel';
+import Header from '@/app/components/Header';
+import Tootlbar from '@/app/components/Tootlbar';
+import AddCompanyButton from '@/app/components/AddCompanyButton';
+import SearchInput from '@/app/components/SearchInput';
+import CompanyTable from '@/app/components/CompanyTable';
+import CompanyRow from '@/app/components/CompanyRow';
+import { Status } from '@/app/components/StatusLabel';
 
 export default function Page() {
   return (
