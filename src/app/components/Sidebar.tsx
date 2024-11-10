@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import SidebarItem from './SidebarItem';
 
 const Sidebar = () => {
   return (
@@ -10,6 +11,22 @@ const Sidebar = () => {
         src="/images/logo.png"
         className="py-8 mb-11 mx-auto"
       />
+      <ul>
+        <SidebarItem
+          src="/sprite.svg#icon-squares"
+          alt="dahsboard icon"
+          path="/dashboard"
+        >
+          Dashboard
+        </SidebarItem>
+        <SidebarItem
+          src="/sprite.svg#icon-briefcase"
+          alt="companies icon"
+          path="/companies"
+        >
+          Companies
+        </SidebarItem>
+      </ul>
     </aside>
   );
 };
