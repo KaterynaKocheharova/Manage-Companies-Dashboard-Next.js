@@ -12,7 +12,7 @@ const Sidebar = () => {
           src="/images/logo.png"
           className="py-8 mb-11 mx-auto"
         />
-        <ul>
+        <ul className="space-y-7">
           <SidebarItem
             src="/sprite.svg#icon-squares"
             alt="dahsboard icon"
