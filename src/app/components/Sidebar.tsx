@@ -1,7 +1,14 @@
+"use client";
 import Image from 'next/image';
 import SidebarItem from './SidebarItem';
+import { useRouter } from 'next/navigation';
 
 const Sidebar = () => {
+  const router = useRouter();
+  const handleExitClick = () => {
+    router.push('/');
+  };
+
   return (
     <aside className="fixed z-50 w-60 h-screen bg-gray-900">
       <div className="flex flex-col h-full overflow-y-auto">
@@ -28,7 +35,7 @@ const Sidebar = () => {
             Companies
           </SidebarItem>
         </ul>
-        <button className="mt-auto flex items-center p-6 mx-auto gap-2 font-medium text-white">
+        <button onClick={handleExitClick} className="mt-auto flex items-center p-6 mx-auto gap-2 font-medium text-white">
           <svg width="18" height="18">
             <use href="/sprite.svg#icon-exit"></use>
           </svg>{' '}
