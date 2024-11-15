@@ -1,7 +1,7 @@
 'use client';
 import clsx from 'clsx';
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
   children: React.ReactNode;
 };
