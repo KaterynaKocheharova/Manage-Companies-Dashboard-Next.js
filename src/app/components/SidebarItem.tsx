@@ -1,16 +1,18 @@
-import Link from "next/link";
+import Link from 'next/link';
+import clsx from 'clsx';
 
 type SidebarItemProps = {
+  current?: boolean;
   src: string;
   path: string;
   alt: string;
   children: React.ReactNode;
 };
 
-const SidebarItem = ({ src, path, alt, children }: SidebarItemProps) => {
+const SidebarItem = ({ src, path, alt, children, current }: SidebarItemProps) => {
   return (
     <li>
-      <Link className="flex items-center h-9 gap-3.5" href={path}>
+      <Link className={clsx("flex items-center h-9 gap-3.5", current && "after:h-full after:ml-auto after:border-2 after:rounded-small after:border-purple-200")} href={path}>
         <svg className="ml-5" width="18" height="18" aria-label={alt}>
           <use href={src}></use>
         </svg>
