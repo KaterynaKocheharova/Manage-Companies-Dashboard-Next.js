@@ -6,7 +6,13 @@ import SummaryTableCell from '@/app/components/SummaryTableCell';
 import DashboardCard from '@/app/components/DashboardCard';
 
 export default async function page() {
-  const data = await getSummarySales();
+  const data = await new Promise((res) => {
+    setTimeout(() => {
+      res(getSummarySales());
+    }, 4000);
+  });
+
+  console.log(data)
 
   return (
     <DashboardCard label="Sales details">
