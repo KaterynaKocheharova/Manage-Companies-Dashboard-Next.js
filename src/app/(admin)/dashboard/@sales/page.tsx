@@ -4,6 +4,7 @@ import SummaryTable from '@/app/components/SummaryTable';
 import SummaryTableHeader from '@/app/components/SummaryTableHeader';
 import SummaryTableCell from '@/app/components/SummaryTableCell';
 import DashboardCard from '@/app/components/DashboardCard';
+import MagicButton from '@/app/components/MagicButton';
 
 export default async function page() {
   const data = await new Promise((res) => {
@@ -12,10 +13,16 @@ export default async function page() {
     }, 4000);
   });
 
-  console.log(data)
+  // label="Sales details"
 
   return (
-    <DashboardCard label="Sales details">
+    <DashboardCard
+      label={
+        <>
+          Sales details <MagicButton>Generate error</MagicButton>
+        </>
+      }
+    >
       <SummaryTable
         headers={
           <>
