@@ -1,12 +1,7 @@
-'use client';
+import React from 'react';
 
-import MagicButton from '@/app/components/MagicButton';
+const page = () => {
+  return <div></div>;
+};
 
-export default function Dashboard() {
-  return (
-    <main>
-      <h2>DASHBOARD</h2>
-      <MagicButton>Click thrice and create an error</MagicButton>
-    </main>
-  );
-}
+export default page;
