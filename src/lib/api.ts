@@ -1,11 +1,90 @@
-export const getSummaryStats = () => {
-  return Promise.resolve({
-    promotions: 427,
-    categories: 8,
-    newCompanies: 28,
-    activeCompanies: 670,
-  });
+export interface SummaryStats {
+  id: string;
+  promotions: number;
+  categories: number;
+  newCompanies: number;
+  activeCompanies: number;
+}
+
+export interface SummarySales {
+  id: string;
+  companyId: string;
+  companyTitle: string;
+  sold: number;
+  income: number;
+}
+
+export interface Country {
+  id: string;
+  title: string;
+}
+
+export interface Category {
+  id: string;
+  title: string;
+}
+
+export enum CompanyStatus {
+  Active = 'active',
+  NotActive = 'notActive',
+  Pending = 'pending',
+  Suspended = 'suspended',
+}
+
+export interface Company {
+  id: string;
+  title: string;
+  description: string;
+  status: CompanyStatus;
+  joinedDate: string;
+  hasPromotions: boolean;
+  categoryId: string;
+  categoryTitle: string;
+  countryId: string;
+  countryTitle: string;
+  avatar?: string;
+}
+
+export interface Promotion {
+  id: string;
+  title: string;
+  description: string;
+  discount: number;
+  companyId: string;
+  companyTitle: string;
+  avatar?: string;
+}
+
+const PROJECT_TOKEN = process.env.NEXT_PUBLIC_PROJECT_TOKEN;
+
+const buildUrl = (...paths: string[]) =>
+  `https://${PROJECT_TOKEN}.mockapi.io/api/v1/${paths.join('/')}`;
+
+const stringifyQueryParams = (params: Record<string, string>) => {
+  return new URLSearchParams(params).toString();
 };
+
+const sendRequest = async <T>(url: string, init?: RequestInit) => {
+  const res = await fetch(url, init);
+  if (!res.ok) {
+    throw new Error(await res.text());
+  }
+
+  return (await res.json()) as T;
+};
+
+export const getSummaryStats = (init?: RequestInit) =>
+  sendRequest<SummaryStats>(buildUrl('summary-stats', '1'), init);
+
+// mock fetching until i learnt the fetch
+// export const getSummaryStats = () => {
+//   return Promise.resolve({
+//     promotions: 427,
+//     categories: 8,
+//     newCompanies: 28,
+//     activeCompanies: 670,
+//   });
+// };
 
 export const getSummarySales = () => {
   const items = [];
